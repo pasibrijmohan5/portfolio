@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brij Mohan Pasi - CV</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            background-color: #f8fafc;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            min-height: 297mm;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            overflow: hidden;
+        }
+
+        .left-column {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            color: white;
+            padding: 40px 30px;
+        }
+
+        .right-column {
+            padding: 40px 40px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .name {
+            font-family: 'Inter', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .title {
+            font-size: 16px;
+            font-weight: 300;
+            color: #f97316;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .contact-item i {
+            width: 20px;
+            margin-right: 12px;
+            color: #f97316;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1e3a8a;
+            border-bottom: 2px solid #f97316;
+            padding-bottom: 8px;
+        }
+
+        .left-column .section-title {
+            color: white;
+            border-bottom-color: #f97316;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: #f97316;
+            border-radius: 3px;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .language-level {
+            color: #f97316;
+            font-weight: 500;
+        }
+
+        .professional-summary {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+            text-align: justify;
+        }
+
+        .experience-item,
+        .education-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .experience-item::before,
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: #f97316;
+            border-radius: 50%;
+        }
+
+        .job-title,
+        .degree-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 5px;
+        }
+
+        .company,
+        .institution {
+            font-weight: 500;
+            color: #6b7280;
+            margin-bottom: 5px;
+        }
+
+        .duration {
+            font-size: 14px;
+            color: #9ca3af;
+            margin-bottom: 10px;
+        }
+
+        .job-description {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .job-description ul {
+            margin-left: 20px;
+        }
+
+        .job-description li {
+            margin-bottom: 5px;
+        }
+
+        .reference-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid #f97316;
+        }
+
+        .reference-name {
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 5px;
+        }
+
+        .reference-position {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+
+        .reference-contact {
+            font-size: 13px;
+            color: #9ca3af;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                max-width: none;
+                width: 100%;
+                height: 100vh;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+                margin: 10px;
+            }
+
+            .left-column,
+            .right-column {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+        <div class="left-column">
+            <div class="header">
+                <h1 class="name">Brij Mohan Pasi</h1>
+                <p class="title">IT Professional & Educator</p>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>pasibrijmohan5@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+977 9808302388</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Nepalgunj-10, Banke, Nepal</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>June 24, 2003</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skill-item">
+                    <div class="skill-name">Programming & Development</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Microsoft Office Suite</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Database Management</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Network Administration</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Educational Technology</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Languages</h2>
+                <div class="language-item">
+                    <span>Nepali</span>
+                    <span class="language-level">Native</span>
+                </div>
+                <div class="language-item">
+                    <span>English</span>
+                    <span class="language-level">Fluent</span>
+                </div>
+                <div class="language-item">
+                    <span>Awadhi</span>
+                    <span class="language-level">Native</span>
+                </div>
+                <div class="language-item">
+                    <span>Bhojpuri</span>
+                    <span class="language-level">Conversational</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Additional Qualifications</h2>
+                <ul style="font-size: 14px; line-height: 1.6;">
+                    <li>Advanced Computer Course Certification</li>
+                    <li>Educational Methodology</li>
+                    <li>System Troubleshooting</li>
+                    <li>Hardware & Software Support</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <p class="professional-summary">
+                    Dedicated IT professional and educator with 3+ years of experience in computer education and ongoing
+                    Bachelor's degree in Information Technology. Proven track record of teaching computer skills to
+                    diverse student populations while maintaining strong academic performance. Multilingual communicator
+                    with expertise in educational technology and a passion for leveraging IT solutions to enhance
+                    learning outcomes.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <h3 class="degree-title">Bachelor of Technology in Information Technology</h3>
+                    <p class="institution">Lumbini Technological University, Nepalgunj</p>
+                    <p class="duration">Expected Graduation: 2024 (Currently pursuing)</p>
+                </div>
+                <div class="education-item">
+                    <h3 class="degree-title">Diploma in Computer Engineering</h3>
+                    <p class="institution">CTEVT (Shree Rastriya Secondary School, Kapilvastu)</p>
+                    <p class="duration">Graduated: 2080 BS | Grade: First Division</p>
+                    <p class="job-description">Key Coursework: Programming, Database Management, Network Administration
+                    </p>
+                </div>
+                <div class="education-item">
+                    <h3 class="degree-title">Secondary Education Examination (SEE)</h3>
+                    <p class="institution">NEB (New Shishu English Boarding School, Kapilvastu)</p>
+                    <p class="duration">Completed: 2075 BS | Grade: B+</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="experience-item">
+                    <h3 class="job-title">Computer Teacher</h3>
+                    <p class="company">Fafuri English Boarding School, Kapilvastu</p>
+                    <p class="duration">2077 BS - 2080 BS (3 years)</p>
+                    <div class="job-description">
+                        <ul>
+                            <li>Designed and delivered comprehensive computer education curriculum for students across
+                                multiple grade levels</li>
+                            <li>Taught fundamental computer skills including Microsoft Office Suite, basic programming
+                                concepts, and digital literacy</li>
+                            <li>Developed engaging lesson plans that improved student computer proficiency by
+                                implementing hands-on learning approaches</li>
+                            <li>Mentored students in technology projects and provided technical support for school
+                                computer systems</li>
+                            <li>Collaborated with faculty to integrate technology into various subject areas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">References</h2>
+                <div class="reference-item">
+                    <div class="reference-name">Mr. Prakash Gupta</div>
+                    <div class="reference-position">Faculty Member, Lumbini Technological University, Nepalgunj</div>
+                    <div class="reference-contact">
+                        Email: prakash.gupta@ltu.edu.np | Phone: +977 9822413590
+                    </div>
+                </div>
+                <div class="reference-item">
+                    <div class="reference-name">Reg Bhandari</div>
+                    <div class="reference-position">Registrar, Lumbini Technological University</div>
+                    <div class="reference-contact">
+                        Email: registrar@ltu.edu.np | Phone: +977 9858059602
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
